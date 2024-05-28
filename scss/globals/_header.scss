@@ -1,0 +1,207 @@
+@use '../utils' as f;
+@import '../utils/font';
+
+
+
+nav {
+  display: grid;
+  grid-template-columns: f.rem(210) 2fr f.rem(250);
+  padding: f.rem(5);
+  align-items: center;
+  cursor: pointer;
+}
+
+
+
+.nav__leftside {
+  display: flex;
+  gap: 0 f.rem(20);
+  align-items: center;
+  
+}
+
+.nav__hamburger {
+  width: f.rem(20);
+  
+  .nav__bar {
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  }
+}
+
+.nav__youtubelogo {
+  width: f.rem(90);
+  position: relative;
+}
+
+.nav__logo {
+  width: 100%;
+}
+
+.nav__country {
+  position: absolute;
+  top: f.rem(-9);
+  right: f.rem(-15);
+  font-size: map-get($fonts , 'minute');
+  font-weight: 600;
+}
+
+
+.nav__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.search {
+  border: 1px solid hsl(0, 1%, 81%);
+  width: f.rem(420);
+  height: f.rem(30);
+  border-radius: f.rem(25);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: f.rem(10);
+  box-shadow: 0px 0px 2px gray;
+  position: relative;
+
+}
+
+.search::placeholder {
+  background-color: none;
+}
+
+.nav__searchbtn {
+  height: f.rem(30);
+  width: f.rem(40);
+  background: hsl(0, 2%, 78%);
+  border-top-right-radius: f.rem(25);
+  border-bottom-right-radius: f.rem(25);
+  border: 1px solid hsl(0, 1%, 81%);
+  margin: -1px;
+  box-shadow: 0px 0px 2px gray;
+}
+
+
+.nav__searchicon{
+  width: 20px;
+  height: 30px;
+  margin-inline: 10px;;
+
+}
+
+.nav__voice {
+  width: f.rem(30);
+  background:  hsl(0, 1%, 81%);
+  border-radius: 50%;
+  padding: 4px 5px;
+  margin-left: 15px;
+  position: relative
+}
+
+.nav__voiceicon {
+  width: 100%;
+}
+
+.nav__rightside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 15px;
+  margin-left: 40px;
+
+}
+
+
+.bp{
+  width: 22px;
+}
+
+.dp {
+  width: 100%;
+}
+
+.nav__notificationimg {
+  position: relative;
+}
+
+.nav_notinumber {
+  position: absolute;
+  top: -5px;
+  right: -3px;
+  font-size: 10px;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0 4px;
+}
+
+.nav__nameinitials {
+
+  background:  rgb(237, 80, 80);
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 50px;
+  background: rgb(165, 165, 165);
+  padding: 8px 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  border-radius: 3px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.logo-tooltip {
+  border-radius: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background:  rgb(219, 219, 219);
+
+  font-weight: 100;
+  font-size: 18px;
+  white-space: nowrap;
+  padding: 12px 15px;
+  left: 80px;
+  
+}
+.voice-tooltip {
+  left: -35px;
+  top: 43px;
+}
+
+.nav__youtubelogo:hover .logo-tooltip {
+  opacity: 1;
+}
+
+.nav__searchbtn:hover .search-tooltip {
+  opacity: 1;
+}
+
+.nav__voice:hover .voice-tooltip {
+  opacity: 1;
+}
+
+.nav__notificationimg:hover .noty {
+  opacity: 1;
+}
+
+.noty {
+  right: -20px;
+}
+
+.nav__createiconbtn {
+  position: relative;
+}
+
+.create {
+left: -20px;
+}
+
+.nav__createiconbtn:hover .create {
+  opacity: 1;
+}

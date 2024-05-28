@@ -1,0 +1,10 @@
+@use 'myfunction' as f;
+
+$fonts : (
+  'minute': f.rem(10),
+  'smallest': f.rem(12),
+  'small' : f.rem(14),
+  'medium' : f.rem(16),
+  'large' : f.rem(20),
+  'xlarge' : f.rem(25)
+ )
