@@ -1,0 +1,86 @@
+
+.sidenav {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 80px;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  z-index: 1000;
+  cursor: pointer;
+  padding-right: 50px;
+
+
+  & img {
+    width: 23px;
+  }
+
+}
+
+
+
+.home, .subscription, .you, .music, .download {
+  position: relative;
+  padding: 10px;
+  margin-left: -10px;
+}
+
+.nametag {
+  font-size: 9px; 
+}
+
+
+.home:hover, .subscription:hover, .you:hover, .music:hover, .download:hover {
+background: rgba(227, 224, 224, 0.67);
+border-radius: 5px;
+
+}
+
+
+
+.tooltip1 {
+  position: absolute;
+  top: 40px;
+  opacity: 0;
+  left: 40px;
+  color: rgb(185, 185, 185);
+  font-weight: 100;
+  font-size: 20px;
+  background: hsl(0, 1%, 14%);
+  padding: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  transition: opacity  0.5s 0.30s;
+  pointer-events: none;
+  box-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.home:hover .home__tooltip {
+  opacity: 1;
+}
+
+.subscription:hover .subscription__tooltip {
+
+  opacity: 1;
+}
+
+.you:hover .you__tooltip {
+  opacity: 1;
+}
+
+.music:hover .music__tooltip {
+  opacity: 1;
+}
+
+.download:hover .download__tooltip {
+  opacity: 1;
+}
+
+.align {
+ margin-left: -10px;
+}
+.align2 {
+  margin-left: 3px;
+}
