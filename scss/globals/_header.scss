@@ -6,13 +6,15 @@
 nav {
   display: grid;
   grid-template-columns: f.rem(210) 2fr f.rem(250);
-  padding: f.rem(20);
+  background: hsl(0, 0%, 100%);
+  
+  padding: f.rem(6) f.rem(13);
   align-items: center;
   cursor: pointer;
-  background-color: rgb(254, 250, 250);
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 2000;
 }
 
 
@@ -172,13 +174,13 @@ nav {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.15s;
+  
 }
 
 .logo-tooltip {
   border-radius: none;
   font-family: Arial, Helvetica, sans-serif;
   background:  rgb(219, 219, 219);
-
   font-weight: 100;
   font-size: 18px;
   white-space: nowrap;

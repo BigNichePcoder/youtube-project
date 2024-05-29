@@ -1,4 +1,94 @@
+@use '../layout.scss/breakpoint'  as lay;
+
+.tab {
+  padding-top: 48px;
+  display: flex;
+  padding-left: 70px;
+
+  .st {
+    padding: 5px 10px;
+    background: rgba(238, 238, 238, 0.943);
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+}
 
 .grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px 75px;
+
+  @include lay.breakpoint(medium) {
+    grid-template-columns: repeat(2, 300px);
+  };
+
+  @include lay.breakpoint(large) {
+    grid-template-columns: repeat(3, 280px);
+  };
+
+  @include lay.breakpoint(medium) {
+    grid-template-columns: repeat(4, 300px);
+  };
+
+
+
+  
+
+.grid-imgcon {
+  width: 276px;
+  height: 198px;
+  position: relative;
+  
+  &__image {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  &__time {
+    font-size: 11px;
+    color: hsl(0, 0%, 100%);
+    position: absolute;
+    background: rgba(6, 6, 6, 0.587);
+    bottom: 50px;
+    z-index: 2000;
+    right: 12px;
+    border-radius: 3px;
+    padding: 3px;
+  }
+}
+}
+
+.view-container {
+  margin-right: 10px;
+  margin-bottom: 40px;
   
 }
+
+.profile {
+  margin-top: -35px;
+  
+  &__desc {
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+  }
+
+  &__dp-con {
+    width: 35px;
+    margin-bottom: 3px;
+    
+    .dp-img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+}
+
+.views-day-con {
+  margin-left: 37px;
+  margin-top: 3px;
+  font-size: 14px;
+  color: rgb(102, 100, 100);
+}
+
