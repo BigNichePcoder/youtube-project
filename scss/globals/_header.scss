@@ -1,4 +1,5 @@
 @use '../utils' as f;
+@use '../layout.scss/breakpoint' as lay;
 @import '../utils/font';
 
 
@@ -8,13 +9,31 @@ nav {
   grid-template-columns: f.rem(210) 2fr f.rem(250);
   background: hsl(0, 0%, 100%);
   
-  padding: f.rem(6) f.rem(13);
+  padding: f.rem(14) f.rem(13);
   align-items: center;
   cursor: pointer;
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 2000;
+  z-index: 3000;
+  box-shadow: 0 2px 3px rgb(198, 198, 198);
+  margin-bottom: 5px;
+  
+
+
+@include lay.breakpoint(medium) {
+  grid-template-columns: f.rem(180) 390px f.rem(180);
+  padding: f.rem(7) f.rem(13);
+  box-shadow: none;
+  margin-bottom: 0px;
+}
+
+@include lay.breakpoint(large) {
+  grid-template-columns: f.rem(210) 2fr f.rem(200);
+ 
+}
+
+ 
 }
 
 
@@ -36,6 +55,14 @@ nav {
   width: 100%;
   height: 100%;
   color: hsl(0, 0%, 100%);
+
+  @include lay.breakpoint(small) {
+    display: none;
+  }
+
+  @include lay.breakpoint(medium) {
+    display: inherit;
+  }
   }
 
   &:hover {
@@ -45,12 +72,22 @@ nav {
 }
 
 .nav__youtubelogo {
-  width: f.rem(80);
+  margin-left: -50px;
+  width: 100px;
   position: relative;
+
+ 
+
+  @include lay.breakpoint(medium) {
+    margin-left: 0;
+    width: f.rem(80);
+    height: 100%;
+  }
 }
 
 .nav__logo {
   width: 100%;
+  height: 100%;
 }
 
 .nav__country {
@@ -59,6 +96,13 @@ nav {
   right: f.rem(-15);
   font-size: map-get($fonts , 'minute');
   font-weight: 100;
+  opacity: 0;
+
+  @include lay.breakpoint(medium) {
+    opacity: 1;
+  }
+
+  
 }
 
 
@@ -66,7 +110,6 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 30px;
 }
 
 .search {
@@ -80,6 +123,14 @@ nav {
   box-shadow: 0px 0px 1px rgb(222, 222, 222);
   position: relative;
 
+  @include lay.breakpoint(small) {
+    display: none;
+  }
+
+  @include lay.breakpoint(medium) {
+    display: inherit;
+  }
+
 }
 
 .search::placeholder {
@@ -88,7 +139,8 @@ nav {
 
 .nav__searchbtn {
   height: f.rem(30);
-  width: f.rem(45);
+  width: f.rem(50);
+
   background:  hsl(0, 0%, 92%);
   border-top-right-radius: f.rem(25);
   border-bottom-right-radius: f.rem(25);
@@ -96,13 +148,38 @@ nav {
   margin: -1px;
 
   box-shadow: 0px 0px 1px rgb(222, 222, 222);
+  position: relative;
+
+  @include lay.breakpoint(small) {
+    margin-right: -300px;
+    background: none;
+    box-shadow: none;
+    border: none;
+    
+    
+  }
+
+  @include lay.breakpoint(medium) {
+    margin-right: 0;
+    background:  hsl(0, 0%, 92%);
+  border-top-right-radius: f.rem(25);
+  border-bottom-right-radius: f.rem(25);
+  border: 1px solid hsl(0, 1%, 81%);
+  margin: -1px;
+  box-shadow: 0px 0px 1px rgb(222, 222, 222);
+  }
 }
 
 
 .nav__searchicon{
-  width: 20px;
+  width: 30px;
   height: 30px;
   margin-inline: 10px;
+
+  @include lay.breakpoint(medium) {
+    width: 20px;
+    height: 30px;
+  }
   
 }
 
@@ -112,7 +189,16 @@ nav {
   border-radius: 50%;
   padding: 4px 5px;
   margin-left: 15px;
-  position: relative
+  position: relative;
+  
+
+  @include lay.breakpoint(small) {
+    display: none;
+  }
+
+  @include lay.breakpoint(medium) {
+    display: inherit;
+  }
 }
 
 .nav__voiceicon {
@@ -125,7 +211,6 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 0 20px;
-  margin-left: 30px;
   margin-right: 30px;
 
 }
@@ -133,6 +218,14 @@ nav {
 
 .bp{
   width: 22px;
+
+  @include lay.breakpoint(small) {
+    display: none;
+  }
+
+  @include lay.breakpoint(medium) {
+    display: inherit;
+  }
 }
 
 .dp {
@@ -155,12 +248,22 @@ nav {
 
 .nav__nameinitials {
 
-  background:  rgb(237, 80, 80);
+  background:  rgba(236, 218, 105, 0.324);
   border-radius: 50%;
-  padding: 5px 10px;
+  padding: 6px 12px;
   font-size: 16px;
   font-weight: 700;
-  margin-left: 5px;
+  margin-inline-end:  -90px;
+  margin-left: 90px;
+  
+  @include lay.breakpoint(medium) {
+   font-size: 16px;
+   padding: 4px 8px;
+   margin-inline: none;
+   margin-left: 0;
+   
+  }
+ 
 }
 
 .tooltip {

@@ -1,52 +1,128 @@
 @use '../layout.scss/breakpoint'  as lay;
 
+main {
+  position: relative;
+}
+
+.tab-con {
+ position: relative;
+
+}
+
+
 .tab {
-  padding-top: 48px;
+  width: 105%;
   display: flex;
-  padding-left: 70px;
+  position: absolute;
+  top: 60px;
+  padding: 3px;
+  background: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgb(218, 217, 217);
+  overflow: hidden;
+  
+  @include lay.breakpoint(medium) {
+    width: 100%;
+    top: 45px;
+    padding-left: 85px;
+    box-shadow: none;
+  }
+
+  @include lay.breakpoint(xlarge) {
+    padding-left: 190px;
+  }
+  
 
   .st {
-    padding: 5px 10px;
-    background: rgba(238, 238, 238, 0.943);
-    margin: 5px;
-    border-radius: 6px;
+    padding: 10px;
+    background: rgba(231, 230, 230, 0.943);
+    margin: 8px;
+    border-radius: 10px;
     font-size: 14px;
+    font-weight: 500;
+    transition: background 0.15s;
+    flex-shrink: 0;
+
+    &:hover {
+      background:  rgba(226, 226, 226, 0.943);
+      opacity: 1;
+    }
+    
+   
   }
+
+  .active {
+    background-color: rgb(18, 18, 18);
+    color: white;
+    pointer-events: none;
+  }
+
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 20px 75px;
+  padding: 121px 90px;
+
+  cursor: pointer;
+
+  
+  @include lay.breakpoint(small) {
+    grid-template-columns: repeat(1, 1fr);
+    padding-inline: 5px;
+  }
 
   @include lay.breakpoint(medium) {
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(2, 340px);
+    padding-left: 95px;
+    padding: 110px 100px;
   };
 
   @include lay.breakpoint(large) {
     grid-template-columns: repeat(3, 280px);
-  };
-
-  @include lay.breakpoint(medium) {
-    grid-template-columns: repeat(4, 300px);
-  };
-
-
-
   
+  };
+ 
+  @include lay.breakpoint(xlarge) {
+    grid-template-columns: repeat(4, 310px);
+    padding-inline: 205px;
+  };
+
+  @include lay.breakpoint(huge) {
+    grid-template-columns: repeat(6, 285px);
+  };
+ 
 
 .grid-imgcon {
-  width: 276px;
-  height: 198px;
+  width: 100%;
+  height: 100%;;
   position: relative;
+  
+  @include lay.breakpoint(small) {
+    width: 111%;
+    margin-left: -5px;
+  }
+
+  @include lay.breakpoint(medium) {
+    width: 100%;
+  }
   
   &__image {
     width: 100%;
     border-radius: 12px;
+
+
+    @include lay.breakpoint(small) {
+      border-radius: 0;
+    }
+
+   @include lay.breakpoint(medium) {
+    border-radius: 12px;
+   }
   }
 
   &__time {
-    font-size: 11px;
+    font-size: 12px;
     color: hsl(0, 0%, 100%);
     position: absolute;
     background: rgba(6, 6, 6, 0.587);
@@ -54,20 +130,41 @@
     z-index: 2000;
     right: 12px;
     border-radius: 3px;
-    padding: 3px;
+    padding: 4px;
+    font-weight: bold;
+
+    @include lay.breakpoint(small) {
+      bottom: 40px;
+      right: 10px;
+    }
+    
+    @include lay.breakpoint(medium) {
+      bottom: 50px;
+      right: 12px;
+    }
   }
 }
 }
 
 .view-container {
   margin-right: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+
+  @include lay.breakpoint(medium) {
+    margin-bottom: 80px;
+  }
   
 }
 
 .profile {
-  margin-top: -35px;
-  
+  margin-top: -12px;
+  padding-left: 10px;
+
+  @include lay.breakpoint(medium) {
+    margin-top: -28px;
+    padding-left: 0;
+  }
+
   &__desc {
     display: flex;
     align-items: center;
@@ -75,20 +172,67 @@
   }
 
   &__dp-con {
-    width: 35px;
-    margin-bottom: 3px;
     
+    width: 40px;
+    margin-top: -6px;
+
+    @include lay.breakpoint(medium) {
+    width: 40px;
+    margin-top: -40px;
+
+    }
+   
     .dp-img {
       border-radius: 50%;
       width: 100%;
     }
   }
+
+  &__title {
+    font-size: 14px;
+    margin-top: -3px;
+    font-weight: 500;
+
+    @include lay.breakpoint(medium) {
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
 }
+
+
 
 .views-day-con {
-  margin-left: 37px;
-  margin-top: 3px;
-  font-size: 14px;
+  margin-left: 2px;
+  font-size: 12px;
   color: rgb(102, 100, 100);
+
+  @include lay.breakpoint(small) {
+    display: flex;
+    gap: 0 5px;
+
+    margin-top: 5px;
+  }
+
+  @include lay.breakpoint(medium) {
+    display: flex;
+    flex-direction: column;
+    gap: 0 3px;
+    
+  }
 }
 
+
+
+.username {
+ 
+}
+
+
+.dot {
+  display: inline;
+
+  @include lay.breakpoint(medium){
+    display: none;
+  }
+}

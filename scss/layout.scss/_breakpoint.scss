@@ -5,6 +5,8 @@ $break-points: (
   'medium': 43.75em,
   'large' : 56.25em,
   'xlarge' : 90em,
+  'huge' : 106.25em,
+
 );
 
 @mixin breakpoint($size) {
