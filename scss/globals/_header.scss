@@ -4,9 +4,15 @@
 
 
 
+header {
+  position: fixed;
+  z-index: 3000;
+  transition: 0.15px 0.15s;
+}
+
 nav {
   display: grid;
-  grid-template-columns: f.rem(210) 2fr f.rem(250);
+  grid-template-columns: f.rem(210) 2fr f.rem(200);
   background: hsl(0, 0%, 100%);
   
   padding: f.rem(14) f.rem(13);
@@ -19,7 +25,7 @@ nav {
   box-shadow: 0 2px 3px rgb(198, 198, 198);
   margin-bottom: 5px;
   
-
+ 
 
 @include lay.breakpoint(medium) {
   grid-template-columns: f.rem(180) 390px f.rem(180);
@@ -113,6 +119,7 @@ nav {
 }
 
 .search {
+  position: relative;
   border: 1px solid hsl(0, 1%, 81%);
   width: f.rem(400);
   height: f.rem(30);
@@ -125,17 +132,23 @@ nav {
 
   @include lay.breakpoint(small) {
     display: none;
+    width: 0;
   }
 
   @include lay.breakpoint(medium) {
     display: inherit;
+    width: f.rem(400);
   }
 
 }
 
 .search::placeholder {
   background-color: none;
+  font-size: 16px;
+  font-weight: 500;
 }
+
+
 
 .nav__searchbtn {
   height: f.rem(30);
@@ -151,7 +164,7 @@ nav {
   position: relative;
 
   @include lay.breakpoint(small) {
-    margin-right: -300px;
+    margin-left: 100px;
     background: none;
     box-shadow: none;
     border: none;
@@ -161,6 +174,7 @@ nav {
 
   @include lay.breakpoint(medium) {
     margin-right: 0;
+    marhin-left: 0;
     background:  hsl(0, 0%, 92%);
   border-top-right-radius: f.rem(25);
   border-bottom-right-radius: f.rem(25);
@@ -169,6 +183,8 @@ nav {
   box-shadow: 0px 0px 1px rgb(222, 222, 222);
   }
 }
+
+
 
 
 .nav__searchicon{
@@ -182,6 +198,8 @@ nav {
   }
   
 }
+
+
 
 .nav__voice {
   width: f.rem(30);
@@ -205,6 +223,51 @@ nav {
   width: 100%;
   margin-top: 2px;
 }
+
+
+.search_width {
+  display: inherit;
+  border-radius: 25px;
+  position: absolute;
+  right: 58px;
+  width: 76%;
+  padding: 15px;
+  background: rgb(226, 225, 225);
+
+}
+
+
+.searchBtn_click .nav__searchicon {
+  height: 28px;
+  width: 40px;
+}
+
+.searchBtn_click {
+  right: 20px;
+}
+
+.arrow {
+  font-weight: 700;
+  display: none;
+  height: 20px;
+  font-size: 30px;
+  position: absolute;
+  bottom: 30px;
+  left: 8px;
+
+}
+
+.arrow a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.show {
+  display: inherit;
+ }
+
+
 
 .nav__rightside {
   display: flex;
@@ -254,13 +317,14 @@ nav {
   font-size: 16px;
   font-weight: 700;
   margin-inline-end:  -90px;
-  margin-left: 90px;
+  margin-right: 130px;
   
   @include lay.breakpoint(medium) {
    font-size: 16px;
    padding: 4px 8px;
    margin-inline: none;
    margin-left: 0;
+   margin-right: 0;
    
   }
  
@@ -330,3 +394,27 @@ left: -10px;
 .nav__createiconbtn:hover .create {
   opacity: 1;
 }
+
+
+.shown_voice {
+  display: inherit;
+  position: absolute;
+  right: 12px;
+  width: 35px;
+  background: rgb(220, 219, 219);
+}
+
+.colorchange {
+
+ background: rgb(241, 240, 240);
+}
+
+
+.search:focus, .search:active {
+  border: 1px solid hsl(0, 1%, 81%);;
+  box-shadow: 0px 0px 1px rgb(222, 222, 222);
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 12px;
+ }

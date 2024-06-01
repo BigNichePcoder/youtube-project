@@ -31,3 +31,49 @@ function generateHtml() {
 }
 
 generateHtml();
+
+const mediaQuery = window.matchMedia("(max-width: 43.74em)");
+
+if (mediaQuery.matches) {
+  const searchBtn = document.querySelector('.js-nav__searchbtn');
+  
+  searchBtn.addEventListener('click', () => {
+   const search = document.querySelector('.search');
+  search.placeholder = "Search YouTube";                      
+  document.querySelector('.arrow').classList.add('show')
+
+  document.querySelector('nav').classList.add('colorchange')
+
+   search.classList.add('search_width');
+   console.log('width');
+   searchBtn.classList.add('searchBtn_click')
+   document.querySelector('.nav__youtubelogo')
+  .classList.add('hide');
+  document.querySelector('.nav__nameinitials')
+  .classList.add('hide');
+  document.querySelector('.nav__voice')
+  .classList.add('shown_voice');
+
+
+
+
+  })
+
+
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 350) {
+      document.querySelector('main')
+      .classList.add('padding');
+
+     document.querySelector('header')
+      .classList.add('move'); 
+
+    }else {
+      document.querySelector('main')
+      .classList.remove('padding')
+      document.querySelector('header')
+      .classList.remove('move');
+    }
+  })
+}
