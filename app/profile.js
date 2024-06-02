@@ -1,10 +1,36 @@
+import { veiwsCalc } from "./calculateviews.js";
+
+class Profile {
+  image;
+  displayPics;
+  title;
+  username;
+  time;
+  views;
+  days;
+  hours;
+  constructor(profileDetails) {
+    this.image = profileDetails.image;
+    this.displayPics = profileDetails.displayPics;
+    this.title = profileDetails.title;
+    this.username = profileDetails.username;
+    this.time = profileDetails.time;
+    this.views = profileDetails.views;
+  }
+
+  viewsFormat() {
+    return `${veiwsCalc(this.views)}`
+  }
+  
+}
+
 export const profiles = [{
   image: 'images/pictures/burna.jpg',
   time: '1:01',
   displayPics: 'images/dp/channels4_profile.jpg',
   title: 'TitoM, Yuppe and Burna Boy - Tshwala Bam Remix',
   username: 'Tito',
-  views: 2.6,
+  views: 2600000,
   days: 10,
 },
   {
@@ -13,7 +39,7 @@ export const profiles = [{
   displayPics: 'images/dp/unnamed (1).jpg',
   title: 'Chike Performes Live in Madison square',
   username: 'Chike',
-  views: 2.6,
+  views: 66000,
   days: 0,
   hours: 2,
   },
@@ -23,9 +49,8 @@ export const profiles = [{
     displayPics: 'images/dp/arya.jpg',
     title: 'Arya Starr- Last Heartbreak Song ft.Giveon(Official Lyric Video)',
     username: 'Ayra Starr',
-    views: 4.3,
+    views: 4300000,
     days: 18,
-    hours: 18,
   },{
     image: 'images/pictures/ten.webp',
     time: '1:33',
@@ -42,7 +67,7 @@ export const profiles = [{
     displayPics: 'images/dp/html.jpg',
     title: 'How Much HTML, CSS & Javascript Is Enough?| Realistic Expectations',
     username: 'Chris Sean',
-    views: 853,
+    views: 853000,
     days: 1,
     hours: 2,
   },
@@ -52,7 +77,7 @@ export const profiles = [{
     displayPics: 'images/dp/kiss.jpg',
     title: 'Kizz Daniel- Doble (Official Visualizer)',
     username: 'Kizz Daniel',
-    views: 269,
+    views: 26900,
     days: 18,
     hours: 2,
   },
@@ -62,7 +87,7 @@ export const profiles = [{
     displayPics: 'images/dp/asake.jpg',
     title: 'Asake & H.E.R - Lonely At The Top (Accoustic) [Official Video]',
     username: 'Asake',
-    views: 4,
+    views: 1000000000,
     days: 6,
     hours: 2,
   },  
@@ -82,7 +107,7 @@ export const profiles = [{
     displayPics: 'images/dp/agt.jpg',
     title: 'Richard Goodall Receives The GOLDEN BUZZER for "Dont stop Believing"|...',
     username: 'America\'s Got Talent',
-    views: 3,
+    views: 10000,
     days: 2,
     hours: 2,
   },  {
@@ -91,7 +116,7 @@ export const profiles = [{
     displayPics: 'images/dp/make.jpg',
     title: 'How to Make a Cheap Camera Cinematic',
     username: 'Zachary',
-    views: 272,
+    views: 2000,
     days: 2,
     hours: 2,
   },
@@ -101,7 +126,7 @@ export const profiles = [{
     displayPics: 'images/dp/html.jpg',
     title: 'How Much HTML, CSS & Javascript Is Enough?| Realistic Expectations',
     username: 'Chris Sean',
-    views: 853,
+    views: 40000,
     days: 1,
     hours: 2,
   },
@@ -111,7 +136,7 @@ export const profiles = [{
     displayPics: 'images/dp/kiss.jpg',
     title: 'Kizz Daniel- Doble (Official Visualizer)',
     username: 'Kizz Daniel',
-    views: 269,
+    views: 370000,
     days: 18,
     hours: 2,
   },
@@ -121,8 +146,11 @@ export const profiles = [{
     displayPics: 'images/dp/asake.jpg',
     title: 'Asake & H.E.R - Lonely At The Top (Accoustic) [Official Video]',
     username: 'Asake',
-    views: 4,
+    views: 237000000,
     days: 6,
     hours: 2,
   },  
-]
+].map(profileDetails => {
+  return new Profile(profileDetails)
+})
+console.log(profiles)
