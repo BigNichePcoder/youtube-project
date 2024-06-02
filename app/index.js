@@ -1,5 +1,6 @@
 import {profiles} from './profile.js';
 import { veiwsCalc } from './calculateviews.js';
+import '../app/claculateTime.js'
 
 function generateHtml() {
   let htmlGen = '';
@@ -20,7 +21,7 @@ function generateHtml() {
   <div class="profile__title">${profile.title}</div>
   <div class="views-day-con">
     <div class="username">${profile.username} <span class="dot">&#x2022; </span></div>
-  <div class="views">${profile.viewsFormat()} views &#x2022;  <span class="span days">${profile.days} days ago</span></div>
+  <div class="views">${profile.viewsFormat()} views &#x2022;  <span class="span days">${profile.getDays()} ago</span></div>
 </div>
 </div>
 </div>

@@ -1,5 +1,7 @@
 import { veiwsCalc } from "./calculateviews.js";
 
+import { calcTime } from "./claculateTime.js";
+
 class Profile {
   image;
   displayPics;
@@ -8,7 +10,7 @@ class Profile {
   time;
   views;
   days;
-  hours;
+
   constructor(profileDetails) {
     this.image = profileDetails.image;
     this.displayPics = profileDetails.displayPics;
@@ -16,10 +18,15 @@ class Profile {
     this.username = profileDetails.username;
     this.time = profileDetails.time;
     this.views = profileDetails.views;
+    this.days = profileDetails.days;
   }
 
   viewsFormat() {
     return `${veiwsCalc(this.views)}`
+  };
+
+  getDays() {
+    return `${calcTime(this.days)}`
   }
   
 }
@@ -31,7 +38,7 @@ export const profiles = [{
   title: 'TitoM, Yuppe and Burna Boy - Tshwala Bam Remix',
   username: 'Tito',
   views: 2600000,
-  days: 10,
+  days: '2024-5-25',
 },
   {
   image: 'images/pictures/chike.webp',
@@ -39,9 +46,8 @@ export const profiles = [{
   displayPics: 'images/dp/unnamed (1).jpg',
   title: 'Chike Performes Live in Madison square',
   username: 'Chike',
-  views: 66000,
-  days: 0,
-  hours: 2,
+  views: 9500000,
+  days: '2023-5-29',
   },
   {
     image: 'images/pictures/aryaStar.webp',
@@ -50,7 +56,7 @@ export const profiles = [{
     title: 'Arya Starr- Last Heartbreak Song ft.Giveon(Official Lyric Video)',
     username: 'Ayra Starr',
     views: 4300000,
-    days: 18,
+    days: '2023-09-25',
   },{
     image: 'images/pictures/ten.webp',
     time: '1:33',
@@ -58,8 +64,8 @@ export const profiles = [{
     title: 'Sophisticated Fun (A CInematic Fashion Film',
     username: 'Tenfold Production',
     views: 144,
-    days: 7,
-    hours: 2,
+    days: '2024-4-20',
+    
   },
   {
     image: 'images/pictures/html.webp',
@@ -68,8 +74,8 @@ export const profiles = [{
     title: 'How Much HTML, CSS & Javascript Is Enough?| Realistic Expectations',
     username: 'Chris Sean',
     views: 853000,
-    days: 1,
-    hours: 2,
+    days: '2020-6-1',
+   
   },
   {
     image: 'images/pictures/kiss daniel.webp',
@@ -78,8 +84,7 @@ export const profiles = [{
     title: 'Kizz Daniel- Doble (Official Visualizer)',
     username: 'Kizz Daniel',
     views: 26900,
-    days: 18,
-    hours: 2,
+    days: '2024-5-20',
   },
   {
     image: 'images/pictures/asake.webp',
@@ -88,8 +93,8 @@ export const profiles = [{
     title: 'Asake & H.E.R - Lonely At The Top (Accoustic) [Official Video]',
     username: 'Asake',
     views: 1000000000,
-    days: 6,
-    hours: 2,
+    days: '2024-6-1T07:60:00',
+   
   },  
   {
     image: 'images/pictures/ghana.webp',
@@ -98,8 +103,7 @@ export const profiles = [{
     title: '5 Ways to Make Money Online in Africa (Ghana, NIgeria, etc)',
     username: 'Alfred Nkansah',
     views: 1,
-    days: 5,
-    hours: 2,
+    days: '2024-4-20',
   },
   {
     image: 'images/pictures/agt.webp',
@@ -108,8 +112,8 @@ export const profiles = [{
     title: 'Richard Goodall Receives The GOLDEN BUZZER for "Dont stop Believing"|...',
     username: 'America\'s Got Talent',
     views: 10000,
-    days: 2,
-    hours: 2,
+    days: '2024-5-30',
+   
   },  {
     image: 'images/pictures/make.webp',
     time: '11:00',
@@ -117,8 +121,7 @@ export const profiles = [{
     title: 'How to Make a Cheap Camera Cinematic',
     username: 'Zachary',
     views: 2000,
-    days: 2,
-    hours: 2,
+    days:'2024-4-20',
   },
   {
     image: 'images/pictures/html.webp',
@@ -127,8 +130,8 @@ export const profiles = [{
     title: 'How Much HTML, CSS & Javascript Is Enough?| Realistic Expectations',
     username: 'Chris Sean',
     views: 40000,
-    days: 1,
-    hours: 2,
+    days: '2024-4-20',
+   
   },
   {
     image: 'images/pictures/kiss daniel.webp',
@@ -137,8 +140,7 @@ export const profiles = [{
     title: 'Kizz Daniel- Doble (Official Visualizer)',
     username: 'Kizz Daniel',
     views: 370000,
-    days: 18,
-    hours: 2,
+    days: '2024-6-2',
   },
   {
     image: 'images/pictures/asake.webp',
@@ -147,8 +149,8 @@ export const profiles = [{
     title: 'Asake & H.E.R - Lonely At The Top (Accoustic) [Official Video]',
     username: 'Asake',
     views: 237000000,
-    days: 6,
-    hours: 2,
+    days: '2024-4-20',
+   
   },  
 ].map(profileDetails => {
   return new Profile(profileDetails)
